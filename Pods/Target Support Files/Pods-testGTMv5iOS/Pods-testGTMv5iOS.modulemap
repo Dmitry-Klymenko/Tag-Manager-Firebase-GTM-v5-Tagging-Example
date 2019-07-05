@@ -1,0 +1,6 @@
+framework module Pods_testGTMv5iOS {
+  umbrella header "Pods-testGTMv5iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
