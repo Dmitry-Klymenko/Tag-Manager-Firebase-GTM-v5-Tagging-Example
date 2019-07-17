@@ -1,9 +1,10 @@
 {
 
-"fingerprint":"Mjc$0",
+"fingerprint":"MzE$0",
 
 "resource": {
-  "version":"27",
+  "version":"31",
+  
   "macros":[{
       "function":"__e",
       "instance_name":"_event"
@@ -55,6 +56,30 @@
       "vtp_setDefaultValue":false,
       "vtp_eventType":"CUSTOM",
       "vtp_key":"action"
+    },{
+      "function":"__md",
+      "instance_name":"EP - FIR - _err",
+      "vtp_setDefaultValue":false,
+      "vtp_eventType":"CUSTOM",
+      "vtp_key":"_err"
+    },{
+      "function":"__md",
+      "instance_name":"EP - FIR - _el",
+      "vtp_setDefaultValue":false,
+      "vtp_eventType":"CUSTOM",
+      "vtp_key":"_el"
+    },{
+      "function":"__md",
+      "instance_name":"EP - FIR - _et",
+      "vtp_setDefaultValue":false,
+      "vtp_eventType":"CUSTOM",
+      "vtp_key":"_et"
+    },{
+      "function":"__md",
+      "instance_name":"EP - FIR - _ev",
+      "vtp_setDefaultValue":false,
+      "vtp_eventType":"CUSTOM",
+      "vtp_key":"_ev"
     },{
       "function":"__ai",
       "instance_name":"App ID"
@@ -175,6 +200,43 @@
       "vtp_trackTypeIsEvent":true,
       "vtp_enableFirebaseEcommerce":true,
       "tag_id":16
+    },{
+      "function":"__ua",
+      "once_per_event":true,
+      "vtp_nonInteraction":false,
+      "vtp_overrideGaSettings":false,
+      "vtp_eventValue":"1",
+      "vtp_eventCategory":"Firebase Error",
+      "vtp_trackType":"TRACK_EVENT",
+      "vtp_gaSettings":["macro",3],
+      "vtp_sendFirebaseCampaignData":true,
+      "vtp_eventAction":["template","error code: ",["macro",10]],
+      "vtp_eventLabel":["template","err_length - ",["macro",11]],
+      "vtp_enableRecaptchaOption":false,
+      "vtp_enableUaRlsa":false,
+      "vtp_enableUseInternalVersion":false,
+      "vtp_enableFirebaseCampaignData":true,
+      "vtp_trackTypeIsEvent":true,
+      "vtp_enableFirebaseEcommerce":true,
+      "tag_id":17
+    },{
+      "function":"__ua",
+      "once_per_event":true,
+      "vtp_nonInteraction":false,
+      "vtp_overrideGaSettings":false,
+      "vtp_eventValue":"1",
+      "vtp_eventCategory":"Firebase Engagement",
+      "vtp_trackType":"TRACK_EVENT",
+      "vtp_gaSettings":["macro",3],
+      "vtp_sendFirebaseCampaignData":true,
+      "vtp_eventAction":["template","Engagement Time: ",["macro",12]],
+      "vtp_enableRecaptchaOption":false,
+      "vtp_enableUaRlsa":false,
+      "vtp_enableUseInternalVersion":false,
+      "vtp_enableFirebaseCampaignData":true,
+      "vtp_trackTypeIsEvent":true,
+      "vtp_enableFirebaseEcommerce":true,
+      "tag_id":18
     }],
   "predicates":[{
       "function":"_re",
@@ -192,12 +254,22 @@
       "function":"_eq",
       "arg0":["macro",4],
       "arg1":"interaction"
+    },{
+      "function":"_eq",
+      "arg0":["macro",4],
+      "arg1":"_err"
+    },{
+      "function":"_eq",
+      "arg0":["macro",4],
+      "arg1":"_e"
     }],
   "rules":[
     [["if",0],["add",0]],
     [["if",1],["add",1]],
     [["if",2],["add",2]],
-    [["if",3],["add",3]]]
+    [["if",3],["add",3]],
+    [["if",4],["add",4]],
+    [["if",5],["add",5]]]
 },
 "runtime":
 [
@@ -213,7 +285,7 @@
 
 [50,"__c_main",[46,"a"],[36,[17,[15,"a"],"value"]]],[50,"__c",[46,"data"],[36,["__c_main",[15,"data"]]]],
 
-[50,"__e_main",[46],[41,"a","b"],[3,"a",[2,[17,[15,"gtmUtils"],"mobile"],"event",[7]]],[22,[1,[1,[15,"a"],[18,[17,[15,"a"],"length"],0]],[12,[16,[15,"a"],0],"_"]],[46,[3,"b",[8,"_f","first_open","_v","first_visit","_iap","in_app_purchase","_e","user_engagement","_s","session_start","_au","app_update","_ui","app_remove","_ab","app_backgrounded","_ou","os_update","_cd","app_clear_data","_ae","app_exception","_nf","notification_foreground","_nr","notification_receive","_no","notification_open","_nd","notification_dismiss","_cmp","firebase_campaign","_vs","screen_view","_ar","ad_reward","_asr","app_store_refund","_assc","app_store_subscription_convert","_assr","app_store_subscription_renew","_asse","app_store_subscription_cancel"]],[3,"a",[30,[16,[15,"b"],[15,"a"]],[15,"a"]]]]],[36,[15,"a"]]],[50,"__e",[46,"data"],[36,["__e_main",[15,"data"]]]],
+[50,"__e_main",[46],[41,"a","b"],[3,"a",[2,[17,[15,"gtmUtils"],"mobile"],"event",[7]]],[22,[1,[1,[15,"a"],[18,[17,[15,"a"],"length"],0]],[12,[16,[15,"a"],0],"_"]],[46,[3,"b",[8,"_f","first_open","_v","first_visit","_iap","in_app_purchase","_e","user_engagement","_s","session_start","_au","app_update","_ui","app_remove","_ab","app_background","_ou","os_update","_cd","app_clear_data","_ae","app_exception","_nf","notification_foreground","_nr","notification_receive","_no","notification_open","_nd","notification_dismiss","_cmp","firebase_campaign","_vs","screen_view","_ar","ad_reward","_asr","app_store_refund","_assc","app_store_subscription_convert","_assr","app_store_subscription_renew","_asse","app_store_subscription_cancel"]],[3,"a",[30,[16,[15,"b"],[15,"a"]],[15,"a"]]]]],[36,[15,"a"]]],[50,"__e",[46,"data"],[36,["__e_main",[15,"data"]]]],
 
 
 

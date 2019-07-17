@@ -53,4 +53,23 @@
 }
 
 
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler {
+    
+    [[AnalyticsManager instance] handleEventsForBackgroundURLSession:identifier
+                                                   completionHandler:completionHandler];
+    
+}
+
+- (void)handleOpenURL:(nonnull NSURL *)url {
+    
+    [[AnalyticsManager instance] handleOpenURL:url];
+    
+}
+
+- (void)application:(UIApplication *)application didUpdateUserActivity:(NSUserActivity *)userActivity {
+    
+    [[AnalyticsManager instance] handleUserActivity:userActivity];
+    
+}
+
 @end

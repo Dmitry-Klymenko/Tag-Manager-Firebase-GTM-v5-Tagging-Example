@@ -46,6 +46,22 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)logEventWithName:(NSString* _Nonnull)name
            andParameters:(NSDictionary* _Nullable)params;
 
+//set Firebase user property
+- (void)setUserPropertyforName:(NSString* _Nonnull)name withValue:(NSString*)value;
+
+
+//app delegates
+
+//https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)handleEventsForBackgroundURLSession:completionHandler:
+- (void)handleEventsForBackgroundURLSession:(nonnull NSString *)identifier completionHandler: (nullable void (^)(void))completionHandler;
+
+//https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)handleOpenURL:
+- (void)handleOpenURL:(nonnull NSURL *)url;
+
+
+//https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)handleUserActivity:
+- (void)handleUserActivity:(nonnull id)userActivity;
+
 @end
 
 NS_ASSUME_NONNULL_END
