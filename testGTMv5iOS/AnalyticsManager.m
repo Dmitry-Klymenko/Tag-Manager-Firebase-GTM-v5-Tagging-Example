@@ -37,7 +37,9 @@
 - (void)mainButtonClicked {
     
     [self logEventWithName:ANALYTICS_EVENTNAME_INTERACTION
-             andParameters:@{ANALYTICS_PARAMETER_ACTION: ANALYTICS_ACTION_CLICK}
+             andParameters:@{
+                             ANALYTICS_PARAMETER_ACTION: ANALYTICS_ACTION_CLICK
+                             }
     ];
     
 }

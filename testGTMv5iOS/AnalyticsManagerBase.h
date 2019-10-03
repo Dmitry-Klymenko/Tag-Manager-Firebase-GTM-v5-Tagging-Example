@@ -47,10 +47,19 @@ NS_ASSUME_NONNULL_BEGIN
            andParameters:(NSDictionary* _Nullable)params;
 
 //set Firebase user property
-- (void)setUserPropertyforName:(NSString* _Nonnull)name withValue:(NSString*)value;
+- (void)setUserPropertyforName:(NSString* _Nonnull)name
+                     withValue:(NSString*)value;
+
+
+//send custom campaign information
+- (void)registerCampaign:(NSString* _Nonnull)campaign
+                  source:(NSString* _Nonnull)source
+                  medium:(NSString* _Nonnull)medium;
 
 
 //app delegates
+
+- (void)appEnterForeground;
 
 //https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)handleEventsForBackgroundURLSession:completionHandler:
 - (void)handleEventsForBackgroundURLSession:(nonnull NSString *)identifier completionHandler: (nullable void (^)(void))completionHandler;

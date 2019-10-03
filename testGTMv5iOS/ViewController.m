@@ -19,6 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    
+    [[AnalyticsManager instance] registerCampaign:@"campaign21" source:@"source21" medium:@"medium21"];
+    
     //Analytics
     [[AnalyticsManager instance] mainScreenViewWithInstance:self];
 }

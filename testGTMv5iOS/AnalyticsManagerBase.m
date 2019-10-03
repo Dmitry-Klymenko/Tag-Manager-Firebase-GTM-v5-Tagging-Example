@@ -132,7 +132,8 @@
     [FIRAnalytics logEventWithName:name parameters:paramsFull];
 }
 
-#pragma mark User Propety
+
+#pragma mark User Property
 
 - (void)setUserPropertyforName:(NSString* _Nonnull)name withValue:(NSString*)value {
     
@@ -140,7 +141,25 @@
     [FIRAnalytics setUserPropertyString:value forName:name];
 }
 
+- (void)registerCampaign:(NSString* _Nonnull)campaign
+                  source:(NSString* _Nonnull)source
+                  medium:(NSString* _Nonnull)medium {
+    
+    [FIRAnalytics logEventWithName:kFIREventCampaignDetails
+                        parameters:@{
+                                     kFIRParameterCampaign: campaign, //name
+                                     kFIRParameterSource: source,
+                                     kFIRParameterMedium: medium
+                                     }
+     ];
+}
+
+
 #pragma mark delegates
+
+- (void)appEnterForeground {
+    [self logEventWithName:kFIREventAppOpen];
+}
 
 - (void)handleEventsForBackgroundURLSession:(nonnull NSString *)identifier completionHandler: (nullable void (^)(void))completionHandler {
     //https://firebase.google.com/docs/reference/ios/firebaseanalytics/api/reference/Classes/FIRAnalytics#/c:objc(cs)FIRAnalytics(cm)handleEventsForBackgroundURLSession:completionHandler:

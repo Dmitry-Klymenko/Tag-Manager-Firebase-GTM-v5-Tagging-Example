@@ -21,6 +21,10 @@
     
     [[AnalyticsManager instance] initializeAnalytics];
     
+    NSURL *url = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
+    if(url) {
+        [self handleOpenURL:url];
+    }
     
     return YES;
 }
@@ -40,6 +44,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    [[AnalyticsManager instance] appEnterForeground];
 }
 
 
@@ -53,14 +59,29 @@
 }
 
 
-- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler {
+- (void)application:(UIApplication *)application
+        handleEventsForBackgroundURLSession:(NSString *)identifier
+                          completionHandler:(void (^)(void))completionHandler {
     
     [[AnalyticsManager instance] handleEventsForBackgroundURLSession:identifier
-                                                   completionHandler:completionHandler];
+                                                   completionHandler:completionHandler
+     ];
     
 }
 
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    [self handleOpenURL:url];
+    
+    return YES;
+}
+
 - (void)handleOpenURL:(nonnull NSURL *)url {
+    
+    //send Custom Analytics Campaigns
+    [[AnalyticsManager instance] registerCampaign:@"campaign1" source:@"source1" medium:@"medium1"];
     
     [[AnalyticsManager instance] handleOpenURL:url];
     
